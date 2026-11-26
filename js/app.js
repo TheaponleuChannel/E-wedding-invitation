@@ -917,6 +917,14 @@
 
   /* ---------- Wishes ----------------------------------------------------------- */
   const WISH_KEY = "kw_wishes";
+  const WISH_RESET_VERSION = "2026-11-26";
+  try {
+    if (localStorage.getItem("kw_wishes_reset_version") !== WISH_RESET_VERSION) {
+      localStorage.removeItem(WISH_KEY);
+      localStorage.setItem("kw_wishes_reset_version", WISH_RESET_VERSION);
+    }
+  } catch (_) { /* private mode — ignore */ }
+
   const wishGrid = $("#wishGrid");
   const wishForm = $("#wishForm");
 

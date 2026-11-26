@@ -53,7 +53,7 @@ body {
   color: var(--ink);
   background-color: var(--ivory);
   background-image:
-    linear-gradient(rgba(250, 248, 242, 0.96), rgba(250, 248, 242, 0.96)),
+    linear-gradient(rgba(250, 248, 242, 0.78), rgba(250, 248, 242, 0.78)),
     var(--pattern),
     url("../images/7.jpg");
   background-size: auto, 150px 100px, cover;
@@ -100,8 +100,8 @@ a { color: inherit; }
 }
 
 /* soft alternating wash */
-.story, .venue, .invitation, .wishes, .contact { background: linear-gradient(180deg, rgba(255, 253, 249, 0), rgba(255, 253, 249, 0.76) 18%, rgba(255, 253, 249, 0.76) 82%, rgba(255, 253, 249, 0)); }
-.countdown, .schedule, .gallery, .rsvp { background: linear-gradient(180deg, rgba(242, 237, 223, 0), rgba(242, 237, 223, 0.72) 18%, rgba(242, 237, 223, 0.72) 82%, rgba(242, 237, 223, 0)); }
+.story, .venue, .invitation, .wishes, .contact { background: linear-gradient(180deg, rgba(255, 253, 249, 0), rgba(255, 253, 249, 0.55) 18%, rgba(255, 253, 249, 0.55) 82%, rgba(255, 253, 249, 0)); }
+.countdown, .schedule, .gallery, .rsvp { background: linear-gradient(180deg, rgba(242, 237, 223, 0), rgba(242, 237, 223, 0.52) 18%, rgba(242, 237, 223, 0.52) 82%, rgba(242, 237, 223, 0)); }
 
 /* ---------- Typography ----------------------------------------------------- */
 .eyebrow {
@@ -362,7 +362,7 @@ a { color: inherit; }
   inset: 0;
   background:
     radial-gradient(1100px 520px at 78% 18%, rgba(232, 213, 168, 0.28), transparent 65%),
-    linear-gradient(180deg, rgba(250, 248, 242, 0.86) 0%, rgba(250, 248, 242, 0.93) 76%),
+    linear-gradient(180deg, rgba(250, 248, 242, 0.66) 0%, rgba(250, 248, 242, 0.78) 76%),
     url("../images/7.jpg") center 38% / cover no-repeat;
 }
 .hero__bg::after {
@@ -1540,6 +1540,31 @@ a { color: inherit; }
   color: var(--ink-soft);
 }
 
+/* Calm translucent surfaces let the Khmer portrait backdrop show through. */
+.countdown__cell,
+.timeline__card,
+.schedule__group,
+.venue__card,
+.rsvp__wrap,
+.wish-card {
+  background-color: rgba(255, 253, 249, 0.9);
+  border-color: rgba(151, 117, 61, 0.22);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.section-title { text-wrap: balance; }
+
+.schedule__group {
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+.schedule__group:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.footer__pattern { opacity: 0.28; }
+
 /* ---------- Music button ------------------------------------------------------------------------------- */
 .music-btn {
   position: fixed;
@@ -1623,7 +1648,7 @@ a { color: inherit; }
     position: fixed;
     left: 0; right: 0; bottom: 0;
     z-index: 60;
-    background: rgba(252, 248, 240, 0.92);
+    background: rgba(255, 253, 249, 0.96);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-top: 1px solid var(--line);
