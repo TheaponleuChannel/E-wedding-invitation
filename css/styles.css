@@ -6,21 +6,22 @@
 /* ---------- Tokens ------------------------------------------------------- */
 :root {
   /* palette */
-  --ivory: #faf6ee;
-  --cream: #f5eddd;
-  --cream-deep: #efe2c8;
-  --paper: #fffdf8;
-  --gold: #c9a45c;
-  --gold-deep: #a87f3f;
-  --gold-light: #e8d5a8;
-  --gold-shine: linear-gradient(120deg, #a87f3f 0%, #d9b978 22%, #f0dda8 42%, #c9a45c 62%, #8e6b33 100%);
-  --maroon: #7a2e2e;
-  --ink: #2e2419;
-  --ink-soft: #6b5842;
-  --line: rgba(201, 164, 92, 0.35);
-  --shadow-sm: 0 6px 18px rgba(122, 90, 40, 0.08);
-  --shadow-md: 0 18px 44px rgba(122, 90, 40, 0.12);
-  --shadow-lg: 0 32px 80px rgba(122, 90, 40, 0.16);
+  --ivory: #faf8f2;
+  --cream: #f2eddf;
+  --cream-deep: #e8dfce;
+  --paper: #fffdf9;
+  --gold: #bd9657;
+  --gold-deep: #92703a;
+  --gold-light: #eadbb7;
+  --gold-shine: linear-gradient(120deg, #92703a 0%, #c4a568 24%, #e8d4a6 46%, #bd9657 68%, #80602f 100%);
+  --maroon: #74313b;
+  --jade: #31594b;
+  --ink: #28271f;
+  --ink-soft: #625b4e;
+  --line: rgba(151, 117, 61, 0.26);
+  --shadow-sm: 0 6px 18px rgba(68, 55, 35, 0.06);
+  --shadow-md: 0 18px 44px rgba(68, 55, 35, 0.09);
+  --shadow-lg: 0 32px 80px rgba(68, 55, 35, 0.13);
 
   /* type */
   --font-kh: "Noto Sans Khmer", "Battambang", "Khmer OS Battambang", "Khmer OS", system-ui, sans-serif;
@@ -51,8 +52,13 @@ body {
   line-height: 1.9;
   color: var(--ink);
   background-color: var(--ivory);
-  background-image: var(--pattern);
-  background-size: 135px 90px;
+  background-image:
+    linear-gradient(rgba(250, 248, 242, 0.96), rgba(250, 248, 242, 0.96)),
+    var(--pattern),
+    url("../images/7.jpg");
+  background-size: auto, 150px 100px, cover;
+  background-position: center, 0 0, center 20%;
+  background-attachment: fixed;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
@@ -94,8 +100,8 @@ a { color: inherit; }
 }
 
 /* soft alternating wash */
-.story, .venue, .invitation, .wishes, .contact { background: linear-gradient(180deg, rgba(255, 253, 248, 0.0), rgba(255, 253, 248, 0.65) 18%, rgba(255, 253, 248, 0.65) 82%, rgba(255, 253, 248, 0)); }
-.countdown, .schedule, .gallery, .rsvp { background: linear-gradient(180deg, rgba(245, 237, 221, 0), rgba(245, 237, 221, 0.55) 18%, rgba(245, 237, 221, 0.55) 82%, rgba(245, 237, 221, 0)); }
+.story, .venue, .invitation, .wishes, .contact { background: linear-gradient(180deg, rgba(255, 253, 249, 0), rgba(255, 253, 249, 0.76) 18%, rgba(255, 253, 249, 0.76) 82%, rgba(255, 253, 249, 0)); }
+.countdown, .schedule, .gallery, .rsvp { background: linear-gradient(180deg, rgba(242, 237, 223, 0), rgba(242, 237, 223, 0.72) 18%, rgba(242, 237, 223, 0.72) 82%, rgba(242, 237, 223, 0)); }
 
 /* ---------- Typography ----------------------------------------------------- */
 .eyebrow {
@@ -226,7 +232,7 @@ a { color: inherit; }
   top: 18px; left: 50%;
   transform: translateX(-50%);
   z-index: 60;
-  background: rgba(252, 248, 240, 0.82);
+  background: rgba(255, 253, 249, 0.92);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--line);
@@ -355,9 +361,9 @@ a { color: inherit; }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(1100px 520px at 78% 18%, rgba(232, 213, 168, 0.5), transparent 65%),
-    radial-gradient(900px 560px at 12% 82%, rgba(226, 197, 150, 0.32), transparent 62%),
-    linear-gradient(180deg, #fbf6ec 0%, var(--ivory) 70%);
+    radial-gradient(1100px 520px at 78% 18%, rgba(232, 213, 168, 0.28), transparent 65%),
+    linear-gradient(180deg, rgba(250, 248, 242, 0.86) 0%, rgba(250, 248, 242, 0.93) 76%),
+    url("../images/7.jpg") center 38% / cover no-repeat;
 }
 .hero__bg::after {
   content: "";
@@ -365,7 +371,7 @@ a { color: inherit; }
   inset: 0;
   background-image: var(--pattern);
   background-size: 135px 90px;
-  opacity: 0.55;
+  opacity: 0.22;
   mask-image: radial-gradient(1000px 700px at 50% 30%, black, transparent 78%);
   -webkit-mask-image: radial-gradient(1000px 700px at 50% 30%, black, transparent 78%);
 }
@@ -479,7 +485,7 @@ a { color: inherit; }
   font-size: 11px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--gold-deep);
+  color: var(--jade);
 }
 
 /* Personalized addressee tag (guest name from the URL) */
@@ -881,7 +887,7 @@ a { color: inherit; }
   font-family: var(--font-display);
   font-style: italic;
   letter-spacing: 0.12em;
-  color: var(--gold-deep);
+  color: var(--jade);
   font-size: 13px;
 }
 .venue__card .orn-divider { margin: 18px auto 6px; display: block; }
@@ -1699,6 +1705,7 @@ a { color: inherit; }
 
 @media (max-width: 640px) {
   body { font-size: 15px; }
+  body { background-attachment: scroll; }
 
   .container, .container--narrow { width: calc(100% - 32px); }
 
