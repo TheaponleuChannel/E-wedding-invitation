@@ -209,7 +209,7 @@ Then update `meta`, `index.html` `<title>`/OG tags, and the JSON-LD block to mat
 
 ### Images
 
-Replace any file in `images/` using the **same filename** — no code changes needed.
+Wedding photos are referenced from the numbered files in `images/` (currently `1.jpg`–`5.jpg` and `7.jpg`–`12.jpg`). Update the paths in `js/data.js` if you rename or replace these files. The hero uses `images/1.jpg`.
 Recommended sizes: hero `4:5` portrait (e.g. 900×1200), gallery `3:2` or `4:5`.
 Add or remove gallery entries via `gallery.photos` in `data.js`.
 

@@ -297,7 +297,7 @@
               </a>
             </div>
           </div>
-          <div class="venue__map reveal" role="img" aria-label="ផែនទីបង្ហាញទីតាំងសាលមង្គលការ">
+          <div class="venue__map reveal">
             ${VenueMap(v)}
           </div>
         </div>
@@ -309,7 +309,7 @@
   const VenueMap = (v) => `
     <div class="mapframe">
       ${ORN.corner("orn-corner--tr")}${ORN.corner("orn-corner--bl")}
-      <svg class="mapsvg" viewBox="0 0 640 460" aria-hidden="true" focusable="false">
+      <svg class="mapsvg" viewBox="0 0 640 460">
         <defs>
           <linearGradient id="mapBg" x1="0" y1="0" x2="1" y2="1">
             <stop offset="0" stop-color="#F7EFDD"/><stop offset="1" stop-color="#EFE2C6"/>
@@ -356,19 +356,22 @@
           <circle cx="120" cy="255" r="5"/><circle cx="500" cy="285" r="5"/>
         </g>
         <!-- venue pin -->
-        <g transform="translate(320 210)">
-          <circle r="46" fill="#C9A45C" opacity="0.18">
-            <animate attributeName="r" values="40;58;40" dur="3s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.22;0.06;0.22" dur="3s" repeatCount="indefinite"/>
-          </circle>
-          <circle r="26" fill="#C9A45C" opacity="0.25"/>
-          <path d="M0 -34 C13 -34 24 -23 24 -10 C24 8 0 34 0 34 C0 34 -24 8 -24 -10 C-24 -23 -13 -34 0 -34 Z" fill="#B98B4E"/>
-          <circle cx="0" cy="-11" r="9" fill="#FBF5E8"/>
-        </g>
-        <g transform="translate(320 262)">
-          <rect x="-92" y="0" width="184" height="34" rx="17" fill="#FBF5E8" stroke="#C9A45C"/>
-          <text x="0" y="22" text-anchor="middle" fill="#7A5A2F" font-size="14" font-family="'Noto Sans Khmer', Inter, sans-serif">Crystal Grand Hall</text>
-        </g>
+        <a href="${v.mapLink}" target="_blank" rel="noopener noreferrer" aria-label="បើក Google Maps" style="cursor:pointer">
+          <g transform="translate(320 210)">
+            <title>បើក Google Maps</title>
+            <circle r="46" fill="#C9A45C" opacity="0.18">
+              <animate attributeName="r" values="40;58;40" dur="3s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.22;0.06;0.22" dur="3s" repeatCount="indefinite"/>
+            </circle>
+            <circle r="26" fill="#C9A45C" opacity="0.25"/>
+            <path d="M0 -34 C13 -34 24 -23 24 -10 C24 8 0 34 0 34 C0 34 -24 8 -24 -10 C-24 -23 -13 -34 0 -34 Z" fill="#B98B4E"/>
+            <circle cx="0" cy="-11" r="9" fill="#FBF5E8"/>
+          </g>
+          <g transform="translate(320 262)">
+            <rect x="-110" y="0" width="220" height="36" rx="18" fill="#FBF5E8" stroke="#C9A45C"/>
+            <text x="0" y="23" text-anchor="middle" fill="#7A5A2F" font-size="14" font-family="'Noto Sans Khmer', Inter, sans-serif">បើកមើលរូប</text>
+          </g>
+        </a>
       </svg>
     </div>`;
 
